@@ -18,16 +18,17 @@
         integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='script.js'></script>
-    <script src="p5timer.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <h1 id="placeholder"></h1>
     <script>
-        let w = window.innerWidth
-        let h = window.innerHeight
+        var w = window.innerWidth
+        var h = window.innerHeight
         var objectY = doom.y
         var objectX = doom.x
         let jump = false
         //wall boundaries
-        let wall1x = w/2
-        let wall1y = h-100
+        let wall1x = w / 2
+        let wall1y = h - 100
         let hitleft = false
         let hitright = false
         let hittop = false
@@ -49,11 +50,18 @@
         function setup() {
             createCanvas(w, h)
         }
-        function draw(){
+        function draw() {
+            doom.collision()
             doom.show()
             doom.up()
             doom.update()
+        }
+        function keyPressed() {
 
+            if (keyCode = 13) {
+                redraw()
+                loop()
+            }
         }
     </script>
 </body>

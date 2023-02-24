@@ -1,0 +1,8 @@
+#placeholder{
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+    justify-content: center;
+}

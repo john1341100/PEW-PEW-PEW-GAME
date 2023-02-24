@@ -72,4 +72,11 @@ function doom(){
             this.enemyY =random(0, h-500)
         }
     }
+    this.collision =function(){
+        this.hit = collideRectCircle(this.enemyX, this.enemyY, 99, 99, this.x, this.y, 50)
+        if(this.hit === true){
+            this.x = 30
+            this.y = h-30
+        }
+    }
 }
