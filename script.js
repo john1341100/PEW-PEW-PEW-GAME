@@ -1,5 +1,7 @@
 //objects
 function doom(){
+    this.positive = 10
+    this.negative = -10
     this.hit = false
     //if refer to stuff inside you, use this, but if calling something outside of object, use object name instead
     this.x = 30
@@ -15,7 +17,7 @@ function doom(){
     this.show = function () {
         clear()
         fill('red')
-        circle(this.x, this.y, 50)
+        circle(this.x, this.y, 40)
         fill('green')
         rect(this.enemyX, this.enemyY, 100, 100)
     }
@@ -23,23 +25,20 @@ function doom(){
     this.up = function () {
         //take initial velocity and modify by opposing gravity
             if (keyIsDown(UP_ARROW)) {
-                this.y += -5;
+                this.y += this.negative;
             }
             if (keyIsDown(DOWN_ARROW)) {
-                this.y += 5;
+                this.y += this.positive;
             }
             if (keyIsDown(LEFT_ARROW)) {
-                this.x += -5;
+                this.x += this.negative;
             }
             if (keyIsDown(RIGHT_ARROW)) {
-                this.x += 5;
+                this.x += this.positive;
             }
         }
     this.update = function () {
         //player mechanics
-
-        //air resistance
-        this.velocity *= 0.9
         //stop from falling through floor
         //stop from leaving the screen
         if (this.y >= h - 25) {
@@ -48,32 +47,30 @@ function doom(){
             this.velocity = 0
             //this.gravity = -0.5
         }
-        
-        //can make into an OR condition
-        if (this.y <= 0) {
-            this.y = 0
+        if (this.y <= 25) {
+            this.y = 25
             this.velocity = 0
         }
         if (this.x >= w) {
             this.x += -5
         }
-        if (this.x <=0) {
-            this.x += 10
+        if (this.x <=25) {
+            this.x =25
             this.velocity = 0
         }
-        if (this.x >= w) {
-            this.x += -10
+        if (this.x >= w-25) {
+            this.x = w-25
             this.velocity = 0
         }
         //enemy mechanics
         this.enemyX += this.velocityE
-        if(this.enemyX < 0){
+        if(this.enemyX < -100){
             this.enemyX = w-100
             this.enemyY =random(0, h-500)
         }
     }
     this.collision =function(){
-        this.hit = collideRectCircle(this.enemyX, this.enemyY, 99, 99, this.x, this.y, 50)
+        this.hit = collideRectCircle(this.enemyX, this.enemyY, 99, 99, this.x, this.y, 40)
         if(this.hit === true){
             this.x = 30
             this.y = h-30
