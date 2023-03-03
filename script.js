@@ -4,8 +4,8 @@ function doom(){
     this.negative = -10
     this.hit = false
     //if refer to stuff inside you, use this, but if calling something outside of object, use object name instead
-    this.x = 30
-    this.y = h - 25
+    this.x = w/2
+    this.y = h/2
     //gravity
     //velocity
     this.velocity = 0
@@ -72,8 +72,8 @@ function doom(){
     this.collision =function(){
         this.hit = collideRectCircle(this.enemyX, this.enemyY, 99, 99, this.x, this.y, 40)
         if(this.hit === true){
-            this.x = 30
-            this.y = h-30
+            this.x = w/2
+            this.y = h/2
         }
     }
 }

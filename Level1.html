@@ -67,6 +67,7 @@
             //top left rectangle
         noStroke()
         fill('silver')
+        //wall top left
         rect(0,0, 400,300)
         hittop =collideRectCircle(0,300, 399, 1, doom.x, doom.y, 40)
         if(hittop===true){
@@ -78,7 +79,41 @@
         if(hitleft === true){
             doom.x += doom.positive
         }
+        //wall top right
+        rect(w-400,0,400,300)
+        hitright = collideRectCircle(w-401,0,1,300, doom.x, doom.y, 40)
+        if(hitright===true){
+            doom.x += doom.negative 
+            doom.velocity= 0
+            console.log('hi')
+        }
+        hittop2 = collideRectCircle(w-400,300,401,1,doom.x, doom.y, 40)
+        if(hittop2===true){
+            doom.y += doom.positive 
+            doom.velocity= 0
+            console.log('hi')
     }
+    //bottom left wall
+    rect(0,h-300, 400, 300)
+    hitbottom = collideRectCircle(0,h-301, 400, 1, doom.x, doom.y, 40)
+    if(hitbottom === true){
+        doom.y += doom.negative
+    }
+    hitleft2 = collideRectCircle(400, h-300, 1, 300, doom.x, doom.y, 40)
+    if(hitleft2 === true){
+        doom.x += doom.positive
+    }
+    //bottom right wall
+    rect(w-400, h-300, 400, 300)
+    hitbottom2 = collideRectCircle(w-400, h-301,400, 1, doom.x, doom.y, 40)
+    if(hitbottom2 === true){
+        doom.y += doom.negative
+    }
+    hitright2 = collideRectCircle( w-401, h-300, 1, 300, doom.x, doom.y, 40)
+    if(hitright2 === true){
+        doom.x += doom.negative
+    }
+}
     </script>
 </body>
 
