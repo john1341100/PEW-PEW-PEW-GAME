@@ -64,6 +64,23 @@
             doom.show()
             doom.up()
             doom.update()
+            //move to different screens
+            if (doom.y >= h+25 ) {
+
+            window.location = 'menu.html'
+        }
+        if (doom.y <= -25) {
+            doom.y = -25
+            doom.velocity = 0
+        }
+        if (doom.x >= w+25) {
+            doom.x = w+25
+            doom.velocity = 0
+        }
+        if (doom.x <=-25) {
+            doom.x =-25
+            doom.velocity = 0
+        }
             //top left rectangle
         noStroke()
         fill('silver')

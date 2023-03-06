@@ -41,25 +41,22 @@ function doom(){
         //player mechanics
         //stop from falling through floor
         //stop from leaving the screen
-        if (this.y >= h - 25) {
+        if (this.y >= h+25 ) {
             jump = false
-            this.y = h - 25
+            this.y = h +25
             this.velocity = 0
             //this.gravity = -0.5
         }
-        if (this.y <= 25) {
-            this.y = 25
+        if (this.y <= -25) {
+            this.y = -25
             this.velocity = 0
         }
-        if (this.x >= w) {
-            this.x += -5
-        }
-        if (this.x <=25) {
-            this.x =25
+        if (this.x >= w+25) {
+            this.x = w+25
             this.velocity = 0
         }
-        if (this.x >= w-25) {
-            this.x = w-25
+        if (this.x <=-25) {
+            this.x =-25
             this.velocity = 0
         }
         //enemy mechanics
