@@ -18,8 +18,12 @@ function doom(){
         clear()
         fill('red')
         circle(this.x, this.y, 40)
-        fill('green')
+        fill('gray')
         rect(this.enemyX, this.enemyY, 100, 100)
+        this.burn = document.getElementById('burn')
+        this.burn.style.top = this.enemyY
+        this.burn.style.left = this.enemyX
+        
     }
     //movement
     this.up = function () {
@@ -62,8 +66,10 @@ function doom(){
         //enemy mechanics
         this.enemyX += this.velocityE
         if(this.enemyX < -100){
+            this.burn.style.left = w-100
             this.enemyX = w-100
             this.enemyY =random(0, h-500)
+            this.burn.style.left = this.enemyY
         }
     }
     this.collision =function(){

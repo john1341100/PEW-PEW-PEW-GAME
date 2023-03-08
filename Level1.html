@@ -67,7 +67,7 @@
             //move to different screens
             if (doom.y >= h+25 ) {
 
-            window.location = 'menu.html'
+            document.location = 'menu.html'
         }
         if (doom.y <= -25) {
             doom.y = -25
@@ -132,6 +132,18 @@
     }
 }
     </script>
+
+<img id ='burn'src="BURNINGMAN.gif">
+<style>
+    #burn{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        z-index: 1;
+    }
+</style>
+
+
 </body>
 
 </html>
