@@ -68,7 +68,7 @@ function doom(){
         if(this.enemyX < -100){
             this.burn.style.left = w-100
             this.enemyX = w-100
-            this.enemyY =random(0, h-500)
+            this.enemyY =random(0, h-200)
             this.burn.style.left = this.enemyY
         }
     }
