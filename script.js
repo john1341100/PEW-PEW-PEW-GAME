@@ -4,7 +4,7 @@ function doom(){
     this.negative = -10
     this.hit = false
     //if refer to stuff inside you, use this, but if calling something outside of object, use object name instead
-    this.x = w/2
+    this.x = 20
     this.y = h/2
     //gravity
     //velocity
@@ -18,12 +18,13 @@ function doom(){
         clear()
         fill('red')
         circle(this.x, this.y, 40)
+    }
+    this.showEnemy = function(){
         fill('gray')
         rect(this.enemyX, this.enemyY, 100, 100)
         this.burn = document.getElementById('burn')
         this.burn.style.top = this.enemyY
         this.burn.style.left = this.enemyX
-        
     }
     //movement
     this.up = function () {

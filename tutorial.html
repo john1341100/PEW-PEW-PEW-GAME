@@ -17,7 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js" -
         integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src='script.js'></script>
+    <script src='tutorialScript.js'></script>
     <link rel="stylesheet" href="style.css">
     <h1 id="placeholder"></h1>
     <script>
@@ -60,26 +60,26 @@
             createCanvas(w, h)
         }
         function draw() {
-            doom.showEnemy()
-            doom.collision()
             doom.show()
             doom.up()
             doom.update()
             //move to different screens
             if (doom.y >= h+1 ) {
+
+            document.location = 'menu.html'
         }
         if (doom.y <= -25) {
             doom.y = -25
             doom.velocity = 0
         }
-        if (doom.x >= w+1) {
+        if (doom.x >= w+25) {
             doom.x = w+25
             doom.velocity = 0
+            document.location = 'Level1.html'
         }
-        if (doom.x <=-1) {
+        if (doom.x <=-25) {
             doom.x =-25
             doom.velocity = 0
-            document.location = 'tutorial.html'
         }
             //top left rectangle
         noStroke()
@@ -132,8 +132,117 @@
     }
 }
     </script>
-<img id ='burn'src="BURNINGMAN.gif">
+   <div class="banner">
+    <div class="line">
+      <span><u>MOVEMENT</u></span>
+    </div>
+    <div class="line">
+      <span>Use</span>
+    </div>
+    <div class="line">
+      <span>Arrow Keys</span>
+    </div>
+  </div>
+  <div id="arrow">
+    <p id = 'thisway'>This way to Level One!!!</p>
+  </div>
+  <div id = 'enemyInfo'>
+    <p id='enemyDesc'> Avoid These Guys!!!</p>
+    <img id ='burn'src="BURNINGMAN.gif">
+  </div>
 <style>
+    /*https://codepen.io/mecarter/pen/AVYwBV*/
+    @import url(https://fonts.googleapis.com/css?family=Oswald:400);
+    #enemyInfo{
+        position:absolute;
+        top: 10%;
+        left: 80%;
+        background-image: url('hello.jpg')
+    }
+    #arrow{
+            width: 280px;
+            height: 280;
+            position: absolute;
+            background-color: black;
+            clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+            top: 50%;
+            left: 70%;
+        }
+#thisway{
+    position: absolute;
+    color: gray;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+}
+.banner {
+	position: absolute;
+    left: 1em;
+	z-index: 1;
+	margin: 80px auto;
+	width: 300px;
+}
+
+.banner .line {
+	margin: 0 0 10px;
+	width: 100%;
+	height: 78px;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.05);
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2.75em;
+	line-height: 78px;
+	transform: skew(0, -15deg);
+}
+
+.banner .line:after,
+.banner .line:first-child:before {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	z-index: -1;
+	display: block;
+	width: 330px;
+	height: 78px;
+	border-radius: 4px;
+	background: rgba(180,180,180,0.8);
+	content: '';
+	transform: skew(0, 15deg);
+}
+
+.banner .line:first-child:before {
+	top: -10px;
+	right: 0;
+	left: auto;
+}
+
+.banner .line:first-child:before,
+.banner .line:last-child:after {
+	width: 0;
+	height: 0;
+	border-width: 38px;
+	border-style: solid;
+	border-color: rgba(48, 47, 47, 0.8) rgba(48, 47, 47, 0.8) transparent transparent;
+	background: transparent;
+}
+
+.banner .line:last-child:after {
+	top: 12px;
+	border-color: transparent transparent rgba(48, 47, 47, 0.8) rgba(48, 47, 47, 0.8);
+}
+
+.banner span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	background: rgba(255,255,255,0.9);
+	color: #666;
+	text-shadow: 1px 1px 0 #646464;
+}
     #burn{
         position: absolute;
         height: 100px;
