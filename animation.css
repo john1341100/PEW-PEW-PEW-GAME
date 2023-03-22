@@ -1,0 +1,19 @@
+#buildings{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+#body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#player{
+    clip-path: circle(50% at 50% 50%);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    z-index: 1;
+}

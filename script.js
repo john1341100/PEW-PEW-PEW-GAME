@@ -21,7 +21,7 @@ function doom(){
     }
     this.showEnemy = function(){
         fill('gray')
-        rect(this.enemyX, this.enemyY, 100, 100)
+        rect(this.enemyX, this.enemyY, 80, 100)
         this.burn = document.getElementById('burn')
         this.burn.style.top = this.enemyY
         this.burn.style.left = this.enemyX

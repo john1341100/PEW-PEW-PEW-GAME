@@ -66,13 +66,11 @@
             doom.up()
             doom.update()
             //move to different screens
-            if (doom.y >= h+1 ) {
-        }
         if (doom.y <= -25) {
             doom.y = -25
             doom.velocity = 0
         }
-        if (doom.x >= w+1) {
+        if (doom.x >= w+25) {
             doom.x = w+25
             doom.velocity = 0
         }
@@ -141,7 +139,9 @@
         z-index: 1;
     }
 </style>
+<div id = ''>
 
+</div>
 
 </body>
 

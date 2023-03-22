@@ -1,26 +1,173 @@
 <html>
-    <head>
 
-    </head>
-    <body>
-        <div id="arrow">
-            <p id = 'thisway'>This way to Level One!!!</p>
-          </div>
-        <style>
-        #arrow{
-            width: 280px;
-            height: 280;
-            position: absolute;
-            background-color: black;
-            clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+<head>
+
+</head>
+
+<body>
+    <style>
+        #player{
+    clip-path: circle(50% at 50% 50%);
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    z-index: 3;
+    animation: movement 10s;
+    animation-delay: 4s, 10s;
+    animation-fill-mode: forwards;
+}
+#enemy{
+    position: absolute;
+            background-image: url(reaper.png);
+            background-size: 100px 100px;
+            width: 200px;
+            height: 200px;
+            background-repeat: no-repeat;
+            transform:rotateY('-50%');
             top: 50%;
-            left: 70%;
+            left: 90%;
+            z-index: 4;
+}
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2f2f2f;
         }
-        #thisway{
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        .d1 {
             position: absolute;
-            color: black;
-            font-size: 20px;
+            background-image: url(building.jpg);
+            background-size: 2700px 1500px;
+
+            height: 30vh;
+            width: 15vw;
+
+            background-position: 0 50%;
+
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            animation: dd1 10s;
+            animation-delay: 4s;
+            animation-iteration-count:initial;
+            animation-fill-mode: forwards;
         }
-        </style>
-    </body>
+
+        .d2 {
+            position: absolute;
+            background-image: url(building.jpg);
+            background-size: 2700px 1500px;
+
+            height: 50vh;
+            width: 25vw;
+
+            background-position: -10vw 50%;
+            left: 10vw;
+
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            animation: dd2 10s 2;
+            animation-delay: 4s;
+        }
+
+        .d3 {
+            position: absolute;
+            background-image: url(building.jpg);
+            background-size: 100% 100%;
+            overflow: hidden;
+
+            height: 100vh;
+            width: 40vw;
+            left: 25vw;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+            background-position: -35vw 50%;
+
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            animation: dd3 10s 2;
+            animation-delay: 4s;
+        }
+
+        .d4 {
+            position: absolute;
+            overflow: hidden;
+            background-image: url(building.jpg);
+            background-size: 2700px 1500px;
+
+            height: 80vh;
+            width: 25vw;
+            left: 60vw;
+            background-position: -70vw 50%;
+
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            animation: dd4 10s 2;
+            animation-delay: 4s;
+        }
+        @keyframes movement{
+            0%{
+                left: 0%;
+            }
+            100%{
+                left: 35vw;
+            }
+        }
+        @keyframes dd1 {
+            0% {}
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes dd2 {
+            0% {}
+
+            50% {
+                background-position: Calc(-10vw - 40px) 50%;
+            }
+        }
+
+        @keyframes dd3 {
+            0% {}
+
+            50% {
+                background-position: Calc(-35vw - 40px) 50%;
+            }
+        }
+
+        @keyframes dd4 {
+            0% {}
+
+            50% {
+                background-position: Calc(-70vw - 40px) 50%;
+            }
+        }
+        
+    </style>
+    <div id="enemy">
+    </div>
+    <div id="player">
+    </div>
+    <div class="main">
+        <div class="d1"></div>
+        <div class="d2" </div>
+            <div class="d3"></div>
+            <div class="d4"></div>
+        </div>
+    </div>
+</body>
+
 </html>
