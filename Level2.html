@@ -1,0 +1,181 @@
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+    <html>
+
+    <head>
+
+    </head>
+
+    <body>
+        <style>
+            body {
+                margin: 0;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"
+            integrity="sha512-3WFaXQUsbGieECwv3t3DvyAkZ7pp+/rIKOQnx7NKhfwIF0u2l+DYsE2eF635ewJVj3YTU4/Ug6UqEkSTZCiSew=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script defer src="https://unpkg.com/p5.collide2d"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js" -
+            integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src='script.js'></script>
+        <link rel="stylesheet" href="style.css">
+        <h1 id="placeholder"></h1>
+        <script>
+            let loadIn
+            let loadInValue = localStorage.getItem('loadIn')
+            var w = window.innerWidth
+            var h = window.innerHeight
+            var objectY = doom.y
+            var objectX = doom.x
+            let jump = false
+            //wall boundaries
+            let wall1x = w / 2
+            let wall1y = h - 100
+            //top left wall
+            let hitleft = false
+            let hittop = false
+            //top right wall
+            let hitright = false
+            let hittop2 = false
+            //bottom left wall
+            let hitbottom = false
+            let hitleft2 = false
+            //bottom right wall
+            let hitright2 = false
+            let hitbottom2 = false
+            //rect 2
+            let hitleft1 = false
+            let hitright1 = false
+            let hittop1 = false
+            let hitbottom1 = false
+            //declare that we have an object and save it as variable jumper
+            var doom = new doom()
+            //sound variables
+            var sweep
+            var retro
+            function preload() {
+                //tell p5 pf the sound formats
+                soundFormats('mp3', 'm4a', 'wav');
+                //bind mp3 file to a variable using the loadSound function
+            }
+            function setup() {
+                createCanvas(w, h)
+            }
+            function loading() {
+                if (loadInValue = 'right') {
+                    doom.xValue = 50;
+                    console.log('hi')
+                }
+                if (loadInValue = 'left') {
+                    doom.xValue = w - 50;
+                    console.log('hi')
+                }
+            }
+            function draw() {
+                doom.show()
+                doom.up()
+                doom.update()
+                //move to different screens
+                if (doom.y <= -25) {
+                    doom.y = -25
+                    doom.velocity = 0
+                }
+                if (doom.x >= w + 25) {
+                    doom.x = w + 25
+                    doom.velocity = 0
+                }
+                if (doom.x <= -1) {
+                    doom.x = -25
+                    doom.velocity = 0
+                    document.location = 'Level1.html'
+
+                }
+                if (doom.x <= 300) {
+                    localStorage.setItem('loadIn', 'left')
+                }
+                if (doom.x >= 800) {
+                    localStorage.setItem('loadIn', 'right')
+                }
+                if (doom.y <= 100) {
+                    localStorage.setItem('loadIn', 'top')
+                }
+                if (doom.y >= 800) {
+                    localStorage.setItem('loadIn', 'bottom ')
+                }
+                //top left rectangle
+                noStroke()
+                fill('silver')
+                //wall top left
+                rect(0, 0, 400, 300)
+                hittop = collideRectCircle(0, 300, 399, 1, doom.x, doom.y, 40)
+                if (hittop === true) {
+                    doom.y += doom.positive
+                    doom.velocity = 0
+                    console.log('hi')
+                }
+                hitleft = collideRectCircle(399, 1, 1, 299, doom.x, doom.y, 40)
+                if (hitleft === true) {
+                    doom.x += doom.positive
+                }
+                //wall top right
+                rect(w - 400, 0, 400, 300)
+                hitright = collideRectCircle(w - 401, 0, 1, 300, doom.x, doom.y, 40)
+                if (hitright === true) {
+                    doom.x += doom.negative
+                    doom.velocity = 0
+                    console.log('hi')
+                }
+                hittop2 = collideRectCircle(w - 400, 300, 401, 1, doom.x, doom.y, 40)
+                if (hittop2 === true) {
+                    doom.y += doom.positive
+                    doom.velocity = 0
+                    console.log('hi')
+                }
+                //bottom left wall
+                rect(0, h - 300, 400, 300)
+                hitbottom = collideRectCircle(0, h - 301, 400, 1, doom.x, doom.y, 40)
+                if (hitbottom === true) {
+                    doom.y += doom.negative
+                }
+                hitleft2 = collideRectCircle(400, h - 300, 1, 300, doom.x, doom.y, 40)
+                if (hitleft2 === true) {
+                    doom.x += doom.positive
+                }
+                //bottom right wall
+                rect(w - 400, h - 300, 400, 300)
+                hitbottom2 = collideRectCircle(w - 400, h - 301, 400, 1, doom.x, doom.y, 40)
+                if (hitbottom2 === true) {
+                    doom.y += doom.negative
+                }
+                hitright2 = collideRectCircle(w - 401, h - 300, 1, 300, doom.x, doom.y, 40)
+                if (hitright2 === true) {
+                    doom.x += doom.negative
+                }
+            }
+        </script>
+        <style>
+
+        </style>
+        <div id=''>
+
+        </div>
+
+    </body>
+
+    </html>
+</body>
+
+</html>

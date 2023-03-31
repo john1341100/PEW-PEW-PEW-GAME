@@ -4,8 +4,10 @@ function doom(){
     this.negative = -10
     this.hit = false
     //if refer to stuff inside you, use this, but if calling something outside of object, use object name instead
-    this.x = 20
-    this.y = h/2
+    this.xValue = 20
+    this.yValue = h/2
+    this.x = this.xValue
+    this.y = this.yValue
     //gravity
     //velocity
     this.velocity = 0
@@ -66,6 +68,9 @@ function doom(){
         }
         //enemy mechanics
         this.enemyX += this.velocityE
+        
+    }
+    this.enemyMove = function (){
         if(this.enemyX < -100){
             this.burn.style.left = w-100
             this.enemyX = w-100

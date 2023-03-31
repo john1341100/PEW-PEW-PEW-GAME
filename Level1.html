@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="style.css">
     <h1 id="placeholder"></h1>
     <script>
+        let loadIn
+        let loadInValue = localStorage.getItem('loadIn')
         var w = window.innerWidth
         var h = window.innerHeight
         var objectY = doom.y
@@ -58,8 +60,29 @@
         }
         function setup() {
             createCanvas(w, h)
+            if (loadInValue = 'right') {
+                    doom.xValue = 50;
+                    console.log('hi')
+                }
+                if (loadInValue = 'left') {
+                    doom.xValue = w - 50;
+                    console.log('hi')
+                }
         }
         function draw() {
+            if(doom.x <=300){
+                    localStorage.setItem('loadIn','left' )
+                }
+                if(doom.x >= 800){
+                    localStorage.setItem('loadIn', 'right')
+                }
+                if( doom.y <= 100){
+                    localStorage.setItem('loadIn', 'top')
+                }
+                if( doom.y >= 800){
+                    localStorage.setItem('loadIn', 'bottom ')
+                }
+            doom.enemyMove()
             doom.showEnemy()
             doom.collision()
             doom.show()
@@ -73,6 +96,7 @@
         if (doom.x >= w+25) {
             doom.x = w+25
             doom.velocity = 0
+            document.location = 'Level2.html'
         }
         if (doom.x <=-1) {
             doom.x =-25

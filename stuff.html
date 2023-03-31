@@ -5,7 +5,63 @@
 </head>
 
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"
+    integrity="sha512-3WFaXQUsbGieECwv3t3DvyAkZ7pp+/rIKOQnx7NKhfwIF0u2l+DYsE2eF635ewJVj3YTU4/Ug6UqEkSTZCiSew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://unpkg.com/p5.collide2d"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js"
+    integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let reaper
+ function preload() {
+            //tell p5 pf the sound formats
+            soundFormats('mp3', 'm4a', 'wav');
+            //bind mp3 file to a variable using the loadSound function
+            reaper = loadSound('Reaper_Coming.mp3')
+        }
+        function setup() {
+            //set volume
+            reaper.setVolume(.1)
+        }
+
+        function draw() {
+            soundBoard()
+            ms = millis()/1000
+    if(ms>=37){
+        //end loop
+       document.location ='tutorial.html'
+    }
+        }
+        function soundBoard(){
+            if(keyIsDown(77)){
+                reaper.loop()
+            }
+        }
+    </script>
     <style>
+        #unmute{
+            position: absolute;
+            z-index: 6;
+            color: gray;
+        }
+        #player_talk{
+            position:  absolute;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+            background-color: white;
+            border-color: black;
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+            z-index: 6;
+            color: black;
+            animation: reveal 2s, disappear 2s;
+            animation-delay: 14s, 18s;
+            top: 40%;
+            left: 35vw;
+            opacity: 0%;
+            animation-fill-mode: forwards;
+        }
         #player{
     clip-path: circle(50% at 50% 50%);
     position: absolute;
@@ -14,9 +70,44 @@
     height: 100px;
     background-color: red;
     z-index: 3;
-    animation: movement 10s;
-    animation-delay: 4s, 10s;
+    animation: movement 10s, attackPlayer 5s, death 5s;
+    animation-delay: 0s, 30s, 35s;
     animation-fill-mode: forwards;
+}
+#yourEnd{
+    position:absolute;
+    color: darkred;
+    background-color: black;
+    font-weight: bold;
+    padding: 1rem;
+    top: 30%;
+    left: 65%;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    z-index: 5;
+opacity: 0%;
+animation: reveal 2s, disappear 2s;
+animation-delay: 26s, 29s;
+animation-fill-mode: forwards;
+}
+#enemy_talk{
+    position:absolute;
+    color: darkred;
+    background-color: black;
+    font-weight: bold;
+    padding: 1rem;
+    top: 30%;
+    left: 90%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    z-index: 5;
+opacity: 0%;
+animation: reveal 2s, disappear 2s;
+animation-delay: 0s, 9s;
+animation-fill-mode: forwards;
 }
 #enemy{
     position: absolute;
@@ -29,6 +120,9 @@
             top: 50%;
             left: 90%;
             z-index: 4;
+            animation: enemyMove 10s, EnemyGrow 2s, EnemyAttack 2s;
+            animation-delay: 15s, 30s, 33s;
+            animation-fill-mode: forwards;
 }
         body {
             margin: 0;
@@ -57,7 +151,7 @@
             transform: translateY(-50%);
             z-index: 2;
             animation: dd1 10s;
-            animation-delay: 4s;
+            animation-delay: 0s;
             animation-iteration-count:initial;
             animation-fill-mode: forwards;
         }
@@ -116,12 +210,82 @@
             animation: dd4 10s 2;
             animation-delay: 4s;
         }
+        @keyframes reveal{
+            0%{
+                opacity: 0%;
+            }
+            100%{
+                opacity: 100%;
+            }
+        }
+        @keyframes disappear {
+            0%{
+                opacity: 100%;
+            }
+            100%{
+                opacity: 0%;
+            }
+        }
+        @keyframes enemyMove{
+            0%{
+                left: 90%;
+            }
+            100%{
+                left: 65%;
+            }
+        }
         @keyframes movement{
             0%{
                 left: 0%;
             }
             100%{
                 left: 35vw;
+            }
+        }
+        @keyframes EnemyGrow{
+            0%{
+                background-size: 100px 100px;
+                top: 50%;
+            }
+            100%{
+                background-size: 200px 200px;
+                top: 40%;
+            }
+        }
+        @keyframes attackPlayer{
+            0%{
+                left: 35vw;
+                top: 50%;
+            }
+            50%{
+                left: 50vw;
+                top: 30%;
+            }
+            100%{
+                top: 40%;
+                left: 50vw;
+            }
+        }
+        @keyframes death{
+            0%{
+                top: 40%;
+                opacity: 100%;
+            }
+            100%{
+                top: 90%;
+                opacity: 0%;
+            }
+        }
+        @keyframes EnemyAttack{
+            0%{
+                left: 65%;
+            }
+            50%{
+                transform: rotateY('-50%');
+            }
+            100%{
+                left: 60%;
+                transform: rotateY('-50%');
             }
         }
         @keyframes dd1 {
@@ -157,8 +321,12 @@
         }
         
     </style>
+    <h1 id = 'unmute'> Press "M" To Unmute</h1>
+    <p id='enemy_talk'>Your time has come Assassin</p>
     <div id="enemy">
     </div>
+    <p id = 'yourEnd'>Then This Will Be Your End</p>
+    <p id="player_talk">I will never yield</p>
     <div id="player">
     </div>
     <div class="main">
