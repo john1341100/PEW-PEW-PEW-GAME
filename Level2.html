@@ -34,6 +34,11 @@
         <script src='Level2.js'></script>
         <link rel="stylesheet" href="style.css">
         <h1 id="placeholder"></h1>
+        <style>
+            body {
+                overflow: hidden;
+            }
+        </style>
         <script>
             let loadIn
             let loadInValue = localStorage.getItem('loadIn')
@@ -85,12 +90,14 @@
                     doom.xValue = w - 50;
                     console.log('hi')
                 }
-                else{
-                    doom.xValue = w/2
+                else {
+                    doom.xValue = w / 2
                 }
             }
             function draw() {
 
+                arrow.collide()
+                arrow.showEnemy()
                 doom.show()
                 doom.up()
                 doom.update()
@@ -172,14 +179,18 @@
                 }
                 arrow.loop()
                 arrow.enemyMove()
-                arrow.showEnemy()
             }
         </script>
+        <img id='arrow' src='arrow.png'>
         <style>
-
+            #arrow {
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                transform: translate(-50%);
+                transform: rotate(45deg);
+            }
         </style>
-        <img src ='Fireball.gif'>
-
     </body>
 
     </html>
