@@ -1,4 +1,4 @@
-function arrow() {
+function arrow2() {
     this.positive = 10
     this.negative = -10
     this.hit = false
@@ -9,8 +9,8 @@ function arrow() {
     this.y = this.yValue
     this.enemyX = w
     this.enemyY = h - 200
-    this.velocityE = -10
-    this.arrow = document.getElementById('arrow')
+    this.velocityE = -20
+    this.arrow = document.getElementById('arrow2')
     this.loop2 = function () {
         this.enemyMove2 = function () {
             this.enemyY += this.velocityE
@@ -23,7 +23,7 @@ function arrow() {
     this.showEnemy2 = function () {
             fill('')
             rect(this.enemyX, this.enemyY, 50, 170)
-            this.arrow = document.getElementById('arrow')
+            this.arrow = document.getElementById('arrow2')
             this.arrow.style.top = this.enemyY+20
             this.arrow.style.left = this.enemyX-50
         }
