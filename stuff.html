@@ -19,24 +19,24 @@
             soundFormats('mp3', 'm4a', 'wav');
             //bind mp3 file to a variable using the loadSound function
             reaper = loadSound('Reaper_Coming.mp3')
+            reaper.setVolume(.1)
         }
         function setup() {
             //set volume
-            reaper.setVolume(.1)
+            userStartAudio()
+            gay()
+        }
+        function gay() {
+            reaper.play()
+            reaper.loop()
         }
 
         function draw() {
-            soundBoard()
             ms = millis()/1000
     if(ms>=37){
         //end loop
        document.location ='tutorial.html'
     }
-        }
-        function soundBoard(){
-            if(keyIsDown(77)){
-                reaper.loop()
-            }
         }
     </script>
     <style>

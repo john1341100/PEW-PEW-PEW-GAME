@@ -31,6 +31,7 @@
             integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src='script.js'></script>
+        <script src='babyBoom.js'></script>
         <link rel="stylesheet" href="style.css">
         <h1 id="placeholder"></h1>
         <style>
@@ -68,11 +69,7 @@
             let hitbottom1 = false
             //declare that we have an object and save it as variable jumper
             var doom = new doom()
-            var arrow = new arrow()
-            var arrow1 = new arrow1()
-            var arrow2= new arrow2()
-            var arrow3 = new arrow3()
-            var arrow4 = new arrow4()
+            var boom = new boom()
             //sound variables
             var sweep
             var retro
@@ -98,16 +95,6 @@
                 }
             }
             function draw() {
-                arrow.collide()
-                arrow.showEnemy()
-                arrow1.collide1()
-                arrow1.showEnemy1()
-                arrow2.collide2()
-                arrow2.showEnemy2()
-                arrow3.collide3()
-                arrow3.showEnemy3()
-                arrow4.collide4()
-                arrow4.showEnemy4()
                 doom.show()
                 doom.up()
                 doom.update()
@@ -187,30 +174,41 @@
                 if (hitright2 === true) {
                     doom.x += doom.negative
                 }
-                arrow.loop()
-                arrow.enemyMove()
-                arrow2.loop2()
-                arrow2.enemyMove2()
-                arrow3.loop3()
-                arrow3.enemyMove3()
-                arrow4.loop4()
-                arrow4.enemyMove4()
-                arrow1.loop1()
-                arrow1.enemyMove1()
             }
         </script>
-        <img id='arrow'class ='arrow' src='arrow.png'>
-        <img id='arrow1' class ='arrow'src='arrow.png'>
-        <img id='arrow2' class ='arrow'src='arrow.png'>
-        <img id='arrow3' class ='arrow'src='arrow.png'>
-        <img id='arrow4'class ='arrow' src='arrow.png'>
+        <img id ='baby' class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby1' class='babyMario' src='babyMario.png'>
+        <img id ='baby2 'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby3' class='babyMario' src='babyMario.png'>
+        <img id ='baby4'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby5'class='babyMario' src='babyMario.png'>
+        <img id ='baby6'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby7'class='babyMario' src='babyMario.png'>
+        <img id ='baby8'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby9'class='babyMario' src='babyMario.png'>
+        <img id ='baby10'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby11'class='babyMario' src='babyMario.png'>
+        <img id ='baby12'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby13'class='babyMario' src='babyMario.png'>
+        <img id ='baby14'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby15'class='babyMario' src='babyMario.png'>
+        <img id ='baby16'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby17'class='babyMario' src='babyMario.png'>
+        <img id ='baby18'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby19'class='babyMario' src='babyMario.png'>
+        <img id ='baby20'class='babyYoda' src='baby-yoda.png'>
+        <img id ='baby21'class='babyMario' src='babyMario.png'>
         <style>
-            .arrow {
+            .babyYoda {
                 position: absolute;
-                width: 150px;
-                height: 150px;
-                transform: translate(-50%);
-                transform: rotate(45deg);
+                width: 100px;
+                height: 100px;
+            }
+
+            .babyMario {
+                position: absolute;
+                width: 100px;
+                height: 100px;
             }
         </style>
     </body>
