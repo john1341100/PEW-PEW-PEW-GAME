@@ -1,6 +1,6 @@
 function boom(){
-    this.positive = 10
-    this.negative = -10
+    this.positive = 5
+    this.negative = -5
     this.hit = false
     //if refer to stuff inside you, use this, but if calling something outside of object, use object name instead
     this.xValue = 20
@@ -14,4 +14,8 @@ function boom(){
     this.enemyX = w - 100
     this.enemyY = h - 200
     this.velocityE = -10
+    this.baby = getElementById('baby')
+    this.show = function(){
+        
+    }
 }
