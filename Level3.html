@@ -95,6 +95,8 @@
                 }
             }
             function draw() {
+                boom.movement()
+                clear()
                 doom.show()
                 doom.up()
                 doom.update()
@@ -174,6 +176,7 @@
                 if (hitright2 === true) {
                     doom.x += doom.negative
                 }
+                boom.show()
             }
         </script>
         <img id ='baby' class='babyYoda' src='baby-yoda.png'>
@@ -201,14 +204,16 @@
         <style>
             .babyYoda {
                 position: absolute;
-                width: 100px;
-                height: 100px;
+                width: 150px;
+                height: 150px;
+                transform: translate(-40%, -20%);
             }
 
             .babyMario {
                 position: absolute;
                 width: 100px;
                 height: 100px;
+                transform: translate(-30%, -20%);
             }
         </style>
     </body>
