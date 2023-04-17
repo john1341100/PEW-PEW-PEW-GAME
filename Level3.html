@@ -32,6 +32,16 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src='script.js'></script>
         <script src='babyBoom.js'></script>
+        <script src='babyBoom1.js'></script>
+        <script src='babyBoom2.js'></script>
+        <script src='babyBoom3.js'></script>
+        <script src='babyBoom4.js'></script>
+        <script src='babyBoom5.js'></script>
+        <script src='babyBoom6.js'></script>
+        <script src='babyBoom7.js'></script>
+        <script src='babyBoom8.js'></script>
+        <script src='babyBoom9.js'></script>
+        <script src='babyBoom10.js'></script>
         <link rel="stylesheet" href="style.css">
         <h1 id="placeholder"></h1>
         <style>
@@ -69,7 +79,18 @@
             let hitbottom1 = false
             //declare that we have an object and save it as variable jumper
             var doom = new doom()
-            var boom = new boom()
+            var boom = new boom1()
+            var boom1 = new boom2()
+            var boom2 = new boom3()
+            var boom3 = new boom4()
+            var boom4 = new boom5()
+            var boom5 = new boom6()
+            var boom6 = new boom7()
+            var boom7 = new boom8()
+            var boom8 = new boom9()
+            var boom9= new boom10()
+            var boom10 = new boom11()
+
             //sound variables
             var sweep
             var retro
@@ -96,6 +117,7 @@
             }
             function draw() {
                 boom.movement()
+                //boom1.movement()
                 clear()
                 doom.show()
                 doom.up()
@@ -177,30 +199,31 @@
                     doom.x += doom.negative
                 }
                 boom.show()
+                boom1.show()
             }
         </script>
-        <img id ='baby' class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby1' class='babyMario' src='babyMario.png'>
-        <img id ='baby2 'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby3' class='babyMario' src='babyMario.png'>
-        <img id ='baby4'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby5'class='babyMario' src='babyMario.png'>
-        <img id ='baby6'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby7'class='babyMario' src='babyMario.png'>
-        <img id ='baby8'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby9'class='babyMario' src='babyMario.png'>
-        <img id ='baby10'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby11'class='babyMario' src='babyMario.png'>
-        <img id ='baby12'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby13'class='babyMario' src='babyMario.png'>
-        <img id ='baby14'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby15'class='babyMario' src='babyMario.png'>
-        <img id ='baby16'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby17'class='babyMario' src='babyMario.png'>
-        <img id ='baby18'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby19'class='babyMario' src='babyMario.png'>
-        <img id ='baby20'class='babyYoda' src='baby-yoda.png'>
-        <img id ='baby21'class='babyMario' src='babyMario.png'>
+        <img id='baby' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby1' class='babyMario' src='babyMario.png'>
+        <img id='baby2 ' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby3' class='babyMario' src='babyMario.png'>
+        <img id='baby4' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby5' class='babyMario' src='babyMario.png'>
+        <img id='baby6' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby7' class='babyMario' src='babyMario.png'>
+        <img id='baby8' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby9' class='babyMario' src='babyMario.png'>
+        <img id='baby10' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby11' class='babyMario' src='babyMario.png'>
+        <img id='baby12' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby13' class='babyMario' src='babyMario.png'>
+        <img id='baby14' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby15' class='babyMario' src='babyMario.png'>
+        <img id='baby16' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby17' class='babyMario' src='babyMario.png'>
+        <img id='baby18' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby19' class='babyMario' src='babyMario.png'>
+        <img id='baby20' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby21' class='babyMario' src='babyMario.png'>
         <style>
             .babyYoda {
                 position: absolute;

@@ -1,4 +1,4 @@
-function boom() {
+function boom9() {
     this.hit =0
     this.hitVert = 0
     this.positive = 5
