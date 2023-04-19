@@ -1,4 +1,4 @@
-function boom1() {
+function boom2() {
     this.hit =0
     this.hitVert = 0
     this.positive = 5
@@ -13,14 +13,13 @@ function boom1() {
     //velocity
     this.velocity = 0
     //enemy code
-    this.yodaX = w
-    this.yodaY = h
+    this.yodaX = w/2
+    this.yodaY = h/2
     this.marioX = w / 2
     this.marioY = h / 2
     this.velocityE = -10
     this.show = function () {
-        this.yoda = document.getElementById('baby')
-        this.mario = document.getElementById('baby1')
+        this.yoda = document.getElementById('baby2')
         fill('red')
         //yoda stuff
         rect(this.yodaX, this.yodaY, 50, 100)
@@ -36,20 +35,20 @@ function boom1() {
         }
         if( (this.yodaX <= 400)||(this.hit === 1)) {
             this.hit = 1
-            this.yodaX += 2
+            this.yodaX += 6
             console.log('hi')
         }
         if((this.yodaY <= 0)||(this.hitVert === 0)){
             this.hitVert = 0
-            this.yodaY += 2
+            this.yodaY += 6
         }
         if((this.yodaY >= h-100)||(this.hitVert === 1)){
            this.hitVert =1
             this.yodaY += -6
         }
         else{
-            this.yodaX +=4
-            this.yodaY +=4
+            this.yodaX +=-4
+            this.yodaY +=-4
         }
         }
 }

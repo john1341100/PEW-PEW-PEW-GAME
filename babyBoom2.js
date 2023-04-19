@@ -1,4 +1,4 @@
-function boom() {
+function boom3() {
     this.hit =0
     this.hitVert = 0
     this.positive = 5
@@ -19,16 +19,10 @@ function boom() {
     this.marioY = h / 2
     this.velocityE = -10
     this.show = function () {
-        this.yoda = document.getElementById('baby')
-        this.mario = document.getElementById('baby1')
-        fill('red')
-        //yoda stuff
-        rect(this.yodaX, this.yodaY, 50, 100)
-        this.yoda.style.left = this.yodaX
-        this.yoda.style.top = this.yodaY
+        //YODA AND MARIO IS NOT YODA, they are IS ALL BABIES I CODED IT UGLY AF
         //mario stuff
         rect(this.marioX, this.marioY, 50, 60)
-        this.baby = document.getElementById('baby1')
+        this.mario = document.getElementById('baby3')
         fill('blue')
         this.mario.style.left = this.marioX
         this.mario.style.top = this.marioY
@@ -41,20 +35,20 @@ function boom() {
         }
         if( (this.marioX <= 400)||(this.hit === 1)) {
             this.hit = 1
-            this.marioX += 2
+            this.marioX += 4
             console.log('hi')
         }
         if((this.marioY <= 0)||(this.hitVert === 0)){
             this.hitVert = 0
-            this.marioY += 2
+            this.marioY += 4
         }
         if((this.marioY >= h-100)||(this.hitVert === 1)){
            this.hitVert =1
-            this.marioY += -6
+            this.marioY += -4
         }
         else{
-            this.marioX +=2
-            this.marioY +=2
+            this.marioX +=-2
+            this.marioY +=-2
         }
         }
 }

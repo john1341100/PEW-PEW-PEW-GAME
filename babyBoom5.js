@@ -1,6 +1,6 @@
-function boom() {
-    this.hit =0
-    this.hitVert = 0
+function boom6() {
+    this.hit 
+    this.hitVert 
     this.positive = 5
     this.negative = -5
     this.hit = false
@@ -20,7 +20,7 @@ function boom() {
     this.velocityE = -10
     this.show = function () {
         this.yoda = document.getElementById('baby')
-        this.mario = document.getElementById('baby1')
+        this.mario = document.getElementById('baby6')
         fill('red')
         //yoda stuff
         rect(this.yodaX, this.yodaY, 50, 100)
@@ -35,26 +35,26 @@ function boom() {
     }
     this.movement = function () {
         //this.ms = millis()/1000
-        if ((this.marioX >= w - 400)||(this.hit === 0)){
+        if ((this.marioX >= w - 400)||(this.hit === 1)){
             this.hit = 0
-            this.marioX += -6
+            this.marioX += -8
         }
-        if( (this.marioX <= 400)||(this.hit === 1)) {
+        if( (this.marioX <= 400)||(this.hit === 0)) {
             this.hit = 1
-            this.marioX += 2
+            this.marioX += 16
             console.log('hi')
         }
-        if((this.marioY <= 0)||(this.hitVert === 0)){
+        if((this.marioY <= 0)||(this.hitVert === 1)){
             this.hitVert = 0
-            this.marioY += 2
+            this.marioY += 8
         }
-        if((this.marioY >= h-100)||(this.hitVert === 1)){
+        if((this.marioY >= h-100)||(this.hitVert === 0)){
            this.hitVert =1
-            this.marioY += -6
+            this.marioY += -8
         }
         else{
-            this.marioX +=2
-            this.marioY +=2
+            this.marioX +=4
+            this.marioY +=4
         }
         }
 }

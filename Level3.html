@@ -36,17 +36,12 @@
         <script src='babyBoom2.js'></script>
         <script src='babyBoom3.js'></script>
         <script src='babyBoom4.js'></script>
-        <script src='babyBoom5.js'></script>
-        <script src='babyBoom6.js'></script>
-        <script src='babyBoom7.js'></script>
-        <script src='babyBoom8.js'></script>
-        <script src='babyBoom9.js'></script>
-        <script src='babyBoom10.js'></script>
-        <link rel="stylesheet" href="style.css">
+        <script src='babyBoom5.js'></script>>
         <h1 id="placeholder"></h1>
         <style>
             body {
                 overflow: hidden;
+                background-color: gray;
             }
         </style>
         <script>
@@ -85,11 +80,6 @@
             var boom3 = new boom4()
             var boom4 = new boom5()
             var boom5 = new boom6()
-            var boom6 = new boom7()
-            var boom7 = new boom8()
-            var boom8 = new boom9()
-            var boom9= new boom10()
-            var boom10 = new boom11()
 
             //sound variables
             var sweep
@@ -116,8 +106,11 @@
                 }
             }
             function draw() {
-                boom.movement()
-                //boom1.movement()
+                boom1.movement()
+                boom2.movement()
+                boom3.movement()
+                boom4.movement()
+                boom5.movement()
                 clear()
                 doom.show()
                 doom.up()
@@ -130,11 +123,12 @@
                 if (doom.x >= w + 25) {
                     doom.x = w + 25
                     doom.velocity = 0
+                    document.location = 'Level4.html'
                 }
                 if (doom.x <= -25) {
                     doom.x = -40
                     doom.velocity = 0
-                    document.location = 'Level1.html'
+                    document.location = 'Level2.html'
 
                 }
                 if (doom.x <= 300) {
@@ -198,32 +192,23 @@
                 if (hitright2 === true) {
                     doom.x += doom.negative
                 }
-                boom.show()
                 boom1.show()
+                boom2.show()
+                boom3.show()
+                boom4.show()
+                boom5.show()
+                boom.collide()
             }
         </script>
         <img id='baby' class='babyYoda' src='baby-yoda.png'>
         <img id='baby1' class='babyMario' src='babyMario.png'>
-        <img id='baby2 ' class='babyYoda' src='baby-yoda.png'>
+        <img id='baby2' class='babyYoda' src='baby-yoda.png'>
         <img id='baby3' class='babyMario' src='babyMario.png'>
         <img id='baby4' class='babyYoda' src='baby-yoda.png'>
         <img id='baby5' class='babyMario' src='babyMario.png'>
         <img id='baby6' class='babyYoda' src='baby-yoda.png'>
-        <img id='baby7' class='babyMario' src='babyMario.png'>
-        <img id='baby8' class='babyYoda' src='baby-yoda.png'>
-        <img id='baby9' class='babyMario' src='babyMario.png'>
-        <img id='baby10' class='babyYoda' src='baby-yoda.png'>
-        <img id='baby11' class='babyMario' src='babyMario.png'>
-        <img id='baby12' class='babyYoda' src='baby-yoda.png'>
-        <img id='baby13' class='babyMario' src='babyMario.png'>
-        <img id='baby14' class='babyYoda' src='baby-yoda.png'>
-        <img id='baby15' class='babyMario' src='babyMario.png'>
-        <img id='baby16' class='babyYoda' src='baby-yoda.png'>
-        <img id='baby17' class='babyMario' src='babyMario.png'>
-        <img id='baby18' class='babyYoda' src='baby-yoda.png'>
-        <img id='baby19' class='babyMario' src='babyMario.png'>
-        <img id='baby20' class='babyYoda' src='baby-yoda.png'>
-        <img id='baby21' class='babyMario' src='babyMario.png'>
+
+
         <style>
             .babyYoda {
                 position: absolute;
