@@ -20,7 +20,7 @@
     <body>
         <style>
             body {
-                margin: 0;
+                overflow: hidden;
             }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"
@@ -37,11 +37,11 @@
         <script src='babyBoom3.js'></script>
         <script src='babyBoom4.js'></script>
         <script src='babyBoom5.js'></script>>
+        <link rel="stylesheet" href="style.css">
         <h1 id="placeholder"></h1>
         <style>
             body {
                 overflow: hidden;
-                background-color: gray;
             }
         </style>
         <script>
@@ -111,7 +111,16 @@
                 boom3.movement()
                 boom4.movement()
                 boom5.movement()
-                clear()
+                boom1.show()
+                boom2.show()
+                boom3.show()
+                boom4.show()
+                boom5.show()
+                boom1.collide()
+                boom2.collide()
+                boom3.collide()
+                boom4.collide()
+                boom5.collide()
                 doom.show()
                 doom.up()
                 doom.update()
@@ -192,12 +201,6 @@
                 if (hitright2 === true) {
                     doom.x += doom.negative
                 }
-                boom1.show()
-                boom2.show()
-                boom3.show()
-                boom4.show()
-                boom5.show()
-                boom.collide()
             }
         </script>
         <img id='baby' class='babyYoda' src='baby-yoda.png'>

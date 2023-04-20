@@ -20,7 +20,7 @@ function boom2() {
     this.velocityE = -10
     this.show = function () {
         this.yoda = document.getElementById('baby2')
-        fill('red')
+        fill('')
         //yoda stuff
         rect(this.yodaX, this.yodaY, 50, 100)
         this.yoda.style.left = this.yodaX
@@ -50,5 +50,13 @@ function boom2() {
             this.yodaX +=-4
             this.yodaY +=-4
         }
+        }
+        this.collide = function(){
+            this.woosh = collideRectCircle(this.yodaX, this.yodaY, 50, 60,doom.x, doom.y, 40 )
+            if(this.woosh === true){
+                doom.x = 50
+                doom.y = h/2
+                console.log('hi')
+            }
         }
 }

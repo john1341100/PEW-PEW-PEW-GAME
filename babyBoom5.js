@@ -1,6 +1,6 @@
 function boom6() {
-    this.hit 
-    this.hitVert 
+    this.hit = 0
+    this.hitVert = 0
     this.positive = 5
     this.negative = -5
     this.hit = false
@@ -21,7 +21,7 @@ function boom6() {
     this.show = function () {
         this.yoda = document.getElementById('baby')
         this.mario = document.getElementById('baby6')
-        fill('red')
+        fill('')
         //yoda stuff
         rect(this.yodaX, this.yodaY, 50, 100)
         this.yoda.style.left = this.yodaX
@@ -35,26 +35,34 @@ function boom6() {
     }
     this.movement = function () {
         //this.ms = millis()/1000
-        if ((this.marioX >= w - 400)||(this.hit === 1)){
+        if ((this.marioX >= w - 400)||(this.hit === 0)){
             this.hit = 0
-            this.marioX += -8
+            this.marioX += -12
         }
-        if( (this.marioX <= 400)||(this.hit === 0)) {
+        if( (this.marioX <= 400)||(this.hit === 1)) {
             this.hit = 1
-            this.marioX += 16
+            this.marioX += 12
             console.log('hi')
         }
-        if((this.marioY <= 0)||(this.hitVert === 1)){
+        if((this.marioY <= 0)||(this.hitVert === 0)){
             this.hitVert = 0
-            this.marioY += 8
+            this.marioY += 4
         }
-        if((this.marioY >= h-100)||(this.hitVert === 0)){
+        if((this.marioY >= h-100)||(this.hitVert === 1)){
            this.hitVert =1
-            this.marioY += -8
+            this.marioY += -4
         }
         else{
-            this.marioX +=4
-            this.marioY +=4
+            this.marioX +=-6
+            this.marioY +=-2
         }
+        }
+        this.collide = function(){
+            this.woosh = collideRectCircle(this.marioX, this.marioY, 50, 60,doom.x, doom.y, 40 )
+            if(this.woosh === true){
+                doom.x = 50
+                doom.y = h/2
+                console.log('hi')
+            }
         }
 }

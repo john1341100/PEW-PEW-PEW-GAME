@@ -23,7 +23,7 @@ function boom3() {
         //mario stuff
         rect(this.marioX, this.marioY, 50, 60)
         this.mario = document.getElementById('baby3')
-        fill('blue')
+        fill('')
         this.mario.style.left = this.marioX
         this.mario.style.top = this.marioY
     }
@@ -50,5 +50,13 @@ function boom3() {
             this.marioX +=-2
             this.marioY +=-2
         }
+        }
+        this.collide = function(){
+            this.woosh = collideRectCircle(this.marioX, this.marioY, 50, 100,doom.x, doom.y, 40 )
+            if(this.woosh === true){
+                doom.x = 50
+                doom.y = h/2
+                console.log('hi')
+            }
         }
 }
