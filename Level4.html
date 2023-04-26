@@ -36,8 +36,56 @@
 
         <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     </body>
+    <div id='playerTalk'>
+        <p id="almostThere"class='talk'>I'm Almost There!!!</p>
+        <p id="stopTime"class='talk'>You won't stop me this time!!!</p>
+        
+    </div>
+    <div id ='player'></div>
+    <img id = 'reaper' src = 'reaper.png'>
+    <div id = 'reaperTalk'>
+        <p id="halt"class ='talk'>HALT</p>
+    </div>
+    <style>
+    .talk{
+        padding: 10px;
+        left: 50%;
+        transform: translate(-50%);
+        position: absolute;
+        opacity: 1;
+        font-size: 20px;
+        color: white;
+    }
+        #reaper{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        #playerTalk{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: maroon;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 45% 75%, 15% 100%, 25% 75%, 0% 75%);
+        }
+        #player{
+            position: absolute;
+            background-color: red;
+            clip-path: circle(50% at 50% 50%);
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+        }
+        #reaperTalk{
+            position: absolute;
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 
-    </html>
+        }
+    </style>
 </body>
 
 </html>
