@@ -52,7 +52,7 @@ function boom5() {
         }
         }
         this.collide = function(){
-            this.woosh = collideRectCircle(this.marioX, this.marioY, 50, 100,doom.x, doom.y, 40 )
+            this.woosh = collideRectCircle(this.marioX, this.marioY, 50, 60,doom.x, doom.y, 40 )
             if(this.woosh === true){
                 doom.x = 50
                 doom.y = h/2

@@ -28,7 +28,7 @@ function boom1() {
         this.yoda.style.top = this.marioY
         //mario stuff
         rect(this.marioX, this.marioY, 50, 60)
-        fill('transparent')
+        fill('')
         this.mario.style.left = this.marioX
         this.mario.style.top = this.marioY
     }

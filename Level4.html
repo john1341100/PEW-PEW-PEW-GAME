@@ -36,37 +36,102 @@
 
         <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     </body>
-    <div id='playerTalk'>
-        <p id="almostThere"class='talk'>I'm Almost There!!!</p>
-        <p id="stopTime"class='talk'>You won't stop me this time!!!</p>
+    <div id="menu">
+    <p id="TBC">To Be Continued!!!</p>
+    <a id="PA" href="menu.html">play again</a>
+</div>
+    <div id='playerTalk'class = 'talk'>
+        <p id="almostThere">I'm Almost There!!!</p>
+        <p id="stopTime">You won't stop me this time!!!</p>
         
     </div>
     <div id ='player'></div>
     <img id = 'reaper' src = 'reaper.png'>
-    <div id = 'reaperTalk'>
-        <p id="halt"class ='talk'>HALT</p>
+    <div id = 'reaperTalk'class='talk'>
+        <p id="halt">HALT</p>
     </div>
     <style>
+        #menu{
+            margin: 0;
+            padding: 0;                                                                                     
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 50%;
+            width: 50%;
+            transform: translate(-50%);
+            animation: reveal 1s;
+            animation-delay: 13s;
+            animation-fill-mode: forwards;
+        }
+        #TBC{
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 50px;
+            background-color: gray;
+        }
+        #PA{
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 50px;
+            background-color: gray;
+            color: white;
+            text-decoration: dashed;
+        }
     .talk{
-        padding: 10px;
+        padding: 5px;
         left: 50%;
         transform: translate(-50%);
         position: absolute;
         opacity: 1;
         font-size: 20px;
         color: white;
+        animation: fadeAway 1s;
+        animation-delay: 10s;
+        animation-fill-mode: forwards;
     }
         #reaper{
             position: absolute;
             width: 200px;
             height: 200px;
+            top: 15%;
+            left: 80%;
+            opacity: 0;
+            animation: revealReaper 2s;
+            animation-delay: 4s;
+            animation-fill-mode: forwards;
+        }
+        #stopTime{
+            position: absolute;
+            opacity: 0;
+            animation: revealStopTime 1.5s;
+            animation-delay: 8s;
+            animation-fill-mode: forwards;
+        }
+        #almostThere{
+            position: absolute;
+            opacity: 1;
+            animation: fadeAlmostThere ;
+            animation-delay: 6s;
+            animation-fill-mode: forwards;
         }
         #playerTalk{
+            padding: 5px;
             position: absolute;
+            opacity: 1;
             width: 200px;
             height: 200px;
+            top: 60%;
+            left: 5%;
             background-color: maroon;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 45% 75%, 15% 100%, 25% 75%, 0% 75%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+            animation: moveForward 3s, fadeAway 1s;
+            animation-delay: 1s, 10s;
+            animation-fill-mode: forwards;
         }
         #player{
             position: absolute;
@@ -74,8 +139,11 @@
             clip-path: circle(50% at 50% 50%);
             width: 100px;
             height: 100px;
-            top: 50%;
-            left: 50%;
+            top: 80%;
+            left: 5%;
+            animation: moveForward 3s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
         }
         #reaperTalk{
             position: absolute;
@@ -83,7 +151,67 @@
             width: 200px;
             height: 200px;
             clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-
+            opacity: 0;
+            left: 65%;
+            animation: revealReaperTalk 1.5s fadeAway 1s;
+            animation-delay: 7s 10s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes reveal{
+            0%{
+                opacity: 0
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @keyframes fadeAway{
+            0%{
+                opacity: 1
+            }
+            100%{
+                opacity: 0
+            }
+        }
+        @keyframes revealStopTime{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @keyframes fadeAlmostThere{
+            0%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        @keyframes moveForward{
+            0%{
+                left: 5%;
+            }
+            100%{
+                left: 20%;
+            }
+        }
+        @keyframes revealReaper{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity:1;
+            }
+        }
+        @keyframes  revealReaperTalk{
+            0%{
+                opacity: 0
+            }
+            100%{
+                opacity: 1;
+            }
         }
     </style>
 </body>
